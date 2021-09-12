@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starter_template/app/storage/app_storage.dart';
 import 'package:get/get.dart';
 import 'package:flutter_starter_template/app/config/noweb.dart'
     if (dart.library.html) 'package:flutter_starter_template/app/config/web.dart';
 
-void main() {
+void main() async {
   // Configure Url if the web is enabled to remove # from url and keep clean urls
   configureUrl();
+  // Prepare AppStorage instance and make it available to the App
+  await Get.putAsync(() => AppStorage().init());
   runApp(App());
 }
 
