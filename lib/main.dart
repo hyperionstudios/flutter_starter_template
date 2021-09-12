@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_starter_template/app/config/noweb.dart'
+    if (dart.library.html) 'package:flutter_starter_template/app/config/web.dart';
 
 void main() {
+  // Configure Url if the web is enabled to remove # from url and keep clean urls
+  configureUrl();
   runApp(App());
 }
 
-class App extends StatelessWidget{
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
