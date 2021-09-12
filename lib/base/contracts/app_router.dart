@@ -1,4 +1,6 @@
-abstract class ApplicationRouter {
+import 'package:get/get.dart';
+
+abstract class ApplicationRouter extends GetxService {
   String get home;
 
   String get login;
